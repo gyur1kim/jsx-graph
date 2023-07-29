@@ -9,7 +9,7 @@ JSXGraph 라이브러리를 활용하여 다양한 수학 문제의 도형 보�
 <img src="README_assets/2023-07-29-23-04-13-image.png" title="" alt="" width="404">
 
 <details>
-<summary>코드</summary>
+<summary><h3>코드</h3></summary>
 
 ```javascript
 let createCylinder = (brd: any, height: number, radius: number) => {

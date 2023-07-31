@@ -21,12 +21,12 @@ function App() {
       <JXGBoard
         logic={(brd) => createCone(brd, 2, 3)}
         boardAttributes={{ 
-          // axis: false, 
-          axis: true, 
+          axis: false, 
+          // axis: true, 
           boundingbox:[-5,10,5,-2],
           showCopyright: false, 
           showNavigation: false,
-          keepaspectratio: true
+          keepaspectratio: true,
         }}
       />
     </div>

@@ -1,3 +1,5 @@
+import CreateRoundBase from "./createRoundBase"
+
 const createCylinder = (brd: any, height: number, radius: number) => {
   brd.suspendUpdate();
 
@@ -35,23 +37,25 @@ const createCylinder = (brd: any, height: number, radius: number) => {
   })
 
   // 아랫면 => 보이는 부분은 실선, 보이지 않는 부분은 점선으로 표시
-  let bottomCircleSolidArc = brd.create('arc', [bottomPointCenter, bottomPointLeft, bottomPointRight], {
-    visible: false,
-  })
-  let bottomCircleSolidArcTransformed = brd.create('curve', [bottomCircleSolidArc, transformScale], {
-    strokeWidth: strokeWidth,
-    strokeColor: color,
-    highlightStrokeColor: color,
-  })
-  let bottomCircleDashArc = brd.create('arc', [bottomPointCenter, bottomPointRight, bottomPointLeft], {
-    visible: false, 
-  })
-  let bottomCircleDashArcTransformed = brd.create('curve', [bottomCircleDashArc, transformScale], {
-    strokeWidth: strokeWidth, 
-    strokeColor: color,
-    highlightStrokeColor: color,
-    dash: 2,
-  })
+  // let bottomCircleSolidArc = brd.create('arc', [bottomPointCenter, bottomPointLeft, bottomPointRight], {
+  //   visible: false,
+  // })
+  // let bottomCircleSolidArcTransformed = brd.create('curve', [bottomCircleSolidArc, transformScale], {
+  //   strokeWidth: strokeWidth,
+  //   strokeColor: color,
+  //   highlightStrokeColor: color,
+  // })
+  // let bottomCircleDashArc = brd.create('arc', [bottomPointCenter, bottomPointRight, bottomPointLeft], {
+  //   visible: false, 
+  // })
+  // let bottomCircleDashArcTransformed = brd.create('curve', [bottomCircleDashArc, transformScale], {
+  //   strokeWidth: strokeWidth, 
+  //   strokeColor: color,
+  //   highlightStrokeColor: color,
+  //   dash: 2,
+  // })
+  // 원뿔에서도 똑같은 원리로 생성되기 때문에, 모듈화
+  CreateRoundBase(brd, transformScale, bottomPointCenter, bottomPointLeft, bottomPointRight)
 
   // 윗면
   let upperCircle = brd.create('circle', [upperPointCenter, radius], {
@@ -61,8 +65,7 @@ const createCylinder = (brd: any, height: number, radius: number) => {
     fixed: true,
     strokeWidth: strokeWidth, 
     strokeColor: color,
-    hightlightStorkeWidth: strokeWidth,
-    highlightStrokeColor: color,
+    highlight: false,
   })
 
   // 원기둥 양 옆 선

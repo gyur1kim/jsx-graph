@@ -1,3 +1,4 @@
+import CreateRoundBase from "./createRoundBase"
 
 const createCone = (brd: any, height: number, radius: number) => {
 
@@ -54,23 +55,24 @@ const createCone = (brd: any, height: number, radius: number) => {
   })
 
   // 아랫면 => 보이는 부분은 실선, 보이지 않는 부분은 점선으로 표시
-  let bottomCircleSolidArc = brd.create('arc', [bottomPointCenter, leftIntersectionPoint, rightIntersectionPoint], {
-    visible: false,
-  })
-  let bottomCircleSolidArcTransformed = brd.create('curve', [bottomCircleSolidArc, transformScale], {
-    strokeWidth: strokeWidth,
-    strokeColor: color,
-    highlightStrokeColor: color,
-  })
-  let bottomCircleDashArc = brd.create('arc', [bottomPointCenter, rightIntersectionPoint, leftIntersectionPoint], {
-    visible: false, 
-  })
-  let bottomCircleDashArcTransformed = brd.create('curve', [bottomCircleDashArc, transformScale], {
-    strokeWidth: strokeWidth, 
-    strokeColor: color,
-    highlightStrokeColor: color,
-    dash: 2,
-  })
+  // let bottomCircleSolidArc = brd.create('arc', [bottomPointCenter, leftIntersectionPoint, rightIntersectionPoint], {
+  //   visible: false,
+  // })
+  // let bottomCircleSolidArcTransformed = brd.create('curve', [bottomCircleSolidArc, transformScale], {
+  //   strokeWidth: strokeWidth,
+  //   strokeColor: color,
+  //   highlightStrokeColor: color,
+  // })
+  // let bottomCircleDashArc = brd.create('arc', [bottomPointCenter, rightIntersectionPoint, leftIntersectionPoint], {
+  //   visible: false, 
+  // })
+  // let bottomCircleDashArcTransformed = brd.create('curve', [bottomCircleDashArc, transformScale], {
+  //   strokeWidth: strokeWidth, 
+  //   strokeColor: color,
+  //   highlightStrokeColor: color,
+  //   dash: 2,
+  // })
+  CreateRoundBase(brd, transformScale, bottomPointCenter, leftIntersectionPoint, rightIntersectionPoint)
 
   // 모선
   let leftGeneratrix = brd.create('segment', [vertexPointCenter, leftIntersectionPointScaled], {

@@ -13,6 +13,8 @@ function App() {
       <Board
         boardName={Math.random() * 10000}
       />
+
+      
       {/* <JXGBoard
         logic={(brd) => createCylinder(brd, 3, 2)}
         boardAttributes={{ 

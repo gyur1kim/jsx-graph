@@ -1,13 +1,19 @@
 import './App.css';
-import JXGBoard from 'jsxgraph-react-js';
+// import JXGBoard from 'jsxgraph-react-js';
+// import JXG from 'jsxgraph';
+import Board from "./components/Board"
 
-import createCylinder from './utils/CreateCylinder';
-import createCone from './utils/CreateCone';
+// import createCylinder from './utils/CreateCylinder';
+// import createCone from './utils/CreateCone';
 
 function App() {
+  
   return (
     <div className="App">
-      <JXGBoard
+      <Board
+        boardName={Math.random() * 10000}
+      />
+      {/* <JXGBoard
         logic={(brd) => createCylinder(brd, 3, 2)}
         boardAttributes={{ 
           axis: false, 
@@ -28,7 +34,7 @@ function App() {
           showNavigation: false,
           keepaspectratio: true,
         }}
-      />
+      /> */}
     </div>
   );
 }

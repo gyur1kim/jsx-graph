@@ -11,7 +11,13 @@ function App() {
   return (
     <div className="App">
       <Board
-        boardName={Math.random() * 10000}
+        boardId={Math.random().toString(36).substring(2, 12)}
+      />
+      <Board
+        boardId={Math.random().toString(36).substring(2, 12)}
+      />
+      <Board
+        boardId={Math.random().toString(36).substring(2, 12)}
       />
 
       
@@ -25,14 +31,14 @@ function App() {
           showNavigation: false,
           keepaspectratio: true
         }}
-      />
-      <JXGBoard
+      /> */}
+      {/* <JXGBoard
         logic={(brd) => createCone(brd, 2, 3)}
         boardAttributes={{ 
           axis: false, 
           // axis: true, 
           boundingbox:[-5,10,5,-2],
-          showCopyright: false, 
+          showCopyright: false,
           showNavigation: false,
           keepaspectratio: true,
         }}

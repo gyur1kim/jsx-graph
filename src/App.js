@@ -2,6 +2,7 @@ import './App.css';
 // import JXGBoard from 'jsxgraph-react-js';
 // import JXG from 'jsxgraph';
 import Board from "./components/Board"
+import SvgRenderer from './components/SvgRenderer';
 
 // import createCylinder from './utils/CreateCylinder';
 // import createCone from './utils/CreateCone';
@@ -10,7 +11,7 @@ function App() {
   
   return (
     <div className="App">
-      <Board
+      {/* <Board
         boardId={Math.random().toString(36).substring(2, 12)}
       />
       <Board
@@ -18,7 +19,7 @@ function App() {
       />
       <Board
         boardId={Math.random().toString(36).substring(2, 12)}
-      />
+      /> */}
 
       
       {/* <JXGBoard
@@ -43,6 +44,8 @@ function App() {
           keepaspectratio: true,
         }}
       /> */}
+
+      <SvgRenderer boardId={Math.random().toString(36).substring(2, 12)} />
     </div>
   );
 }
